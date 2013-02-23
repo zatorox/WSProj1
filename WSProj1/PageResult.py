@@ -1,7 +1,8 @@
 class PageResult:
 
-    def __init__(self, title, content, url, iurl, domain, author, news, votes, date, related):
+    def __init__(self, title, kwic, content, url, iurl, domain, author, news, votes, date, related):
         self.title = title
+        self.kwic = kwic
         self.content = content
         self.url = url
         self.iurl = iurl
