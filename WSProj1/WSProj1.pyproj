@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1acf0fc2-1dcf-4f18-b2e0-d181e848c05f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>WSProj1.py</StartupFile>
+    <StartupFile>Search.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="browser.py" />
+    <Compile Include="Browser.py" />
+    <Compile Include="PageResult.py" />
+    <Compile Include="PageSort.py" />
+    <Compile Include="Search.py" />
     <Compile Include="WSProj1.py" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
