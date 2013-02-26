@@ -33,7 +33,6 @@ class FarooSearch(object):
         except BrowserError:
             raise SearchError ("Failed getting %s: %s") % (e.url, e.error)
 
-        print("'''" + page.decode("utf-8") + "'''")
         return page.decode("utf-8")
 
 class StringParser(object):
