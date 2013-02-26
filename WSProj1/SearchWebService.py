@@ -1,12 +1,10 @@
-import bottle
-from bottle import route, run
+from bottle import route, run, template
+
 import Search
-import json
 
 @route('/:keyword', method='GET')
 def get_event(keyword):
     jsonOutput = "{\"results\":["
-
     for searchResult in Search.Search(str(keyword)):
         jsonOutput += searchResult.jsonSeralize() + ","
 
@@ -17,4 +15,4 @@ def get_event(keyword):
     jsonOutput += "]}"
     return jsonOutput
 
-run()
+run(host='localhost', port=8080)

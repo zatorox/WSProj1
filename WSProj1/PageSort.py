@@ -6,8 +6,8 @@ def Sort(pageResults, relatedWords):
             pageHitMapping[pageResult] += pageResult.kwic.count(relatedWord)
         
     sortedPages = []
-    for key, value in sorted(pageHitMapping.iteritems(), key=lambda(k,v): (v,k)):
-        sortedPages.append(key)
+    '''for key, value in sorted(pageHitMapping.iteritems(), key=lambda(k,v): (v,k)):
+        sortedPages.append(key)'''
 
     return sortedPages
 
