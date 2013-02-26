@@ -14,7 +14,8 @@ class PageResult:
         self.date = date
 
     def jsonSeralize(self):
-        return "{" + self.serializeKeyValue("title", self.title) + "," + self.serializeKeyValue("kwic", self.kwic) + "," + self.serializeKeyValue("content", self.content) + "," + self.serializeKeyValue("url", self.url) + "," + self.serializeKeyValue("iurl", self.iurl) + "," + self.serializeKeyValue("domain", self.domain) + "," + self.serializeKeyValue("author", self.author) + "," + self.serializeKeyValue("votes", self.votes) + "," + self.serializeKeyValue("date", self.date) + "}"
+        '''return "{" + self.serializeKeyValue("title", self.title) + "," + self.serializeKeyValue("kwic", self.kwic) + "," + self.serializeKeyValue("content", self.content) + "," + self.serializeKeyValue("url", self.url) + "," + self.serializeKeyValue("iurl", self.iurl) + "," + self.serializeKeyValue("domain", self.domain) + "," + self.serializeKeyValue("author", self.author) + "," + self.serializeKeyValue("votes", self.votes) + "," + self.serializeKeyValue("date", self.date) + "}"'''
+        return "{" + self.serializeKeyValue("title", self.title) + "}"
 
     def serializeKeyValue(self, key, value):
         if value == None:

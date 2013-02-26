@@ -13,6 +13,8 @@ def get_event(keyword):
    
 
     jsonOutput += "]}"
+
+    print(jsonOutput)
     return jsonOutput
 
 run(host='localhost', port=8080)

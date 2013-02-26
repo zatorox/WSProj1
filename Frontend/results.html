@@ -26,8 +26,9 @@
 			*/
 				//COMMENT THIS OUT
 				//$.getJSON("http://www.faroo.com/api?q=google&start=1&l=en&src=web&f=json",
-				$.getJSON("http://localhost:8080/hello/Peter",
+				$.getJSON("http://localhost:8080/Car",
 					function(data){
+					alert(data);
 						$.each(data.results, function(i,item){
 							jQuery('<div/>', {  text: item.title }).appendTo('#results'); 
 						});
