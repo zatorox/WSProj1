@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1acf0fc2-1dcf-4f18-b2e0-d181e848c05f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SearchWebService.py</StartupFile>
+    <StartupFile>johanTest.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,6 +24,8 @@
   <ItemGroup>
     <Compile Include="bottle.py" />
     <Compile Include="Browser.py" />
+    <Compile Include="GeneralParser.py" />
+    <Compile Include="johanTest.py" />
     <Compile Include="PageResult.py" />
     <Compile Include="PageSort.py" />
     <Compile Include="Search.py" />
