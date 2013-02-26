@@ -11,7 +11,7 @@
 import random
 import socket
 import urllib
-'import urllib.request'
+import urllib.request
 import http.client
 
 BROWSERS = (
