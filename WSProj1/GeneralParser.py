@@ -14,7 +14,7 @@ class FarooSearch(object):
     SEARCH_URL = "http://www.faroo.com/api?q=%(query)s&start=%(start)s&length=%(length)s&l=en&src=web&f=json"
 
     def __init__(self, query, start, length):
-        self.query = query
+        self.query = query.replace(' ', '%20')
         self.start = start
         self.length = length
         self.browser = Browser()
