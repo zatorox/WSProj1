@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1acf0fc2-1dcf-4f18-b2e0-d181e848c05f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>johanTest.py</StartupFile>
+    <StartupFile>SearchWebService.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

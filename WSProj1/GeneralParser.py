@@ -46,7 +46,7 @@ class StringParser(object):
         
         data = json.loads(results3)
 
-        resultList = [PageResult(data['results'][i]['title'],
+        pageResults = [PageResult(data['results'][i]['title'],
                                  data['results'][i]['kwic'],
                                  data['results'][i]['content'],
                                  data['results'][i]['url'],
@@ -56,6 +56,6 @@ class StringParser(object):
                                  data['results'][i]['votes'],
                                  data['results'][i]['date']) for i in range(len(data['results']))]
 
-        return resultList
+        return pageResults
         
 
