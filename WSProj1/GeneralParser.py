@@ -2,6 +2,7 @@ import urllib
 import json
 
 from Browser import Browser, BrowserError
+from PageResult import PageResult
 
 class SearchError(Exception):
     """
@@ -33,6 +34,29 @@ class FarooSearch(object):
             raise SearchError ("Failed getting %s: %s") % (e.url, e.error)
 
         print("'''" + page.decode("utf-8") + "'''")
-        return "'''" + page.decode("utf-8") + "'''"
+        return page.decode("utf-8")
+
+class StringParser(object):
+
+    def __init__(self, results):
+        self.results = results
+
+    def _convertToList(self):
+        results2 = self.results.replace('''"news": false,''',"")
+        results3 = results2.replace('''"news": true,''',"")
+        
+        data = json.loads(results3)
+
+        resultList = [PageResult(data['results'][i]['title'],
+                                 data['results'][i]['kwic'],
+                                 data['results'][i]['content'],
+                                 data['results'][i]['url'],
+                                 data['results'][i]['iurl'],
+                                 data['results'][i]['domain'],
+                                 data['results'][i]['author'],
+                                 data['results'][i]['votes'],
+                                 data['results'][i]['date']) for i in range(len(data['results']))]
+
+        return resultList
         
 

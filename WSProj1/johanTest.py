@@ -1,7 +1,9 @@
-from GeneralParser import FarooSearch, SearchError
+from GeneralParser import FarooSearch, SearchError, StringParser
 
 try:
-    fs = FarooSearch("car quidditch", "1", "5")
+    fs = FarooSearch("iPhone", "1", "10")
     results = fs._get_results()
-except SearchError:
-    print ("Search failed: %s")
+    sp = StringParser(results)
+    resultList = sp._convertToList()
+except SearchError as e:
+    print ("Search failed: %s", e)
