@@ -1,5 +1,6 @@
 import urllib
 import json
+import unicodedata
 
 from Browser import Browser, BrowserError
 from PageResult import PageResult
@@ -33,6 +34,7 @@ class FarooSearch(object):
         except BrowserError:
             raise SearchError ("Failed getting %s: %s") % (e.url, e.error)
 
+        #return (unicodedata.normalize('NFKD', page).encode('ascii','ignore')).decode("utf-8")
         return page.decode("utf-8")
 
 class StringParser(object):
@@ -43,18 +45,18 @@ class StringParser(object):
     def _convertToList(self):
         results2 = self.results.replace('''"news": false,''',"")
         results3 = results2.replace('''"news": true,''',"")
-        
+
         data = json.loads(results3)
 
         pageResults = [PageResult(data['results'][i]['title'],
-                                 data['results'][i]['kwic'],
-                                 data['results'][i]['content'],
-                                 data['results'][i]['url'],
-                                 data['results'][i]['iurl'],
-                                 data['results'][i]['domain'],
-                                 data['results'][i]['author'],
-                                 data['results'][i]['votes'],
-                                 data['results'][i]['date']) for i in range(len(data['results']))]
+                                  data['results'][i]['kwic'],
+                                  data['results'][i]['content'],
+                                  data['results'][i]['url'],
+                                  data['results'][i]['iurl'],
+                                  data['results'][i]['domain'],
+                                  data['results'][i]['author'],
+                                  data['results'][i]['votes'],
+                                  data['results'][i]['date']) for i in range(len(data['results']))]
 
         return pageResults
         

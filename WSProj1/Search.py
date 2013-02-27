@@ -5,7 +5,7 @@ from GeneralParser import FarooSearch, SearchError, StringParser
 
 def Search(keyword):
     try:
-        fs = FarooSearch(keyword, "1", "8")
+        fs = FarooSearch(keyword, "1", "10")
         results = fs._get_results()
         sp = StringParser(results)
         resultList = sp._convertToList()
